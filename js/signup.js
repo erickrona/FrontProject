@@ -14,6 +14,7 @@ $('#signup_button').on('click', function(){
   };
 
   json_to_send = JSON.stringify(json_to_send);
+  console.log(json_to_send)
 
   $.ajax({
     //url: 'http://localhost:3000/users',
@@ -27,7 +28,7 @@ $('#signup_button').on('click', function(){
     success: function(data){
       alert("Usuario creado con exito");
       console.log('success: '+ data);
-      window.location = './index.html'
+      window.location = './signin.html'
     },
     error: function(error_msg) {
       alert((error_msg['responseText']));

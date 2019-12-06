@@ -12,7 +12,7 @@ $('#login_button').on('click', function(){
   console.log(json_to_send)
   $.ajax({
     //url: 'http://localhost:3000/login',
-    url: 'https://todolist-finalproject.herokuapp.com/users',
+    url: 'https://todolist-finalproject.herokuapp.com/login',
     headers: {
         'Content-Type':'application/json'
     },
