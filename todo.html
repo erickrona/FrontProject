@@ -10,14 +10,15 @@
 <body>
 	<div class="todo-container">
 		<h2>To Do List</h2>
-		<div class="list">
+		<div class="todo">
 			<form action="/" method="POST" class="todo-header">
-				<input type="text" name="newitem" id="newitem" onkeypress="return inputFunct(event)">
+				<input type="text" name="content" id="myInput" onkeypress="return inputFunct(event)">
 				<button type="submit" ><span class="fas fa-plus" id='btn' onclick= "return btnFunct(event)"></span></button>
 			</form>
-			<ul id="todo-list">
+			<ul class="todo-list">
+				<% todoTasks.forEach(details => { %>
 				<li class="todo-list-item">
-					<div class="todo-list-item-name"></div>
+					<div class="todo-list-item-name"><%= details.content %></div>
 					<a href="/edit/<%= details._id %>" class="edit">
 						<span class="fas fa-edit"></span>
 					</a>
@@ -25,6 +26,7 @@
 						<span class="fas fa-times"></span>
 					</a>
 				</li>
+				<% }) %>
 			</ul>
 		</div>
 	</div>
@@ -34,7 +36,7 @@
 
 <script type="text/javascript">
 	function inputFunct(e) {
-		var inputValue = document.getElementById("newitem").value;
+		var inputValue = document.getElementById("myInput").value;
 		if (e.keyCode == 13 ) {
 			if (inputValue === '') {
           		alert("You must write something!");
@@ -43,7 +45,7 @@
     }
     
     function btnFunct(e) {
-  		var inputVal = document.getElementById("newitem").value;
+  		var inputVal = document.getElementById("myInput").value;
   		if (inputVal === '') {
     		alert("You must write something!");
   		}

@@ -33,7 +33,6 @@ function loadTodos() {
           newElement.classList.add("done");
         }
         $("#todo-list").append(newElement);
-        
       }
     },
     error: function(error_msg) {
