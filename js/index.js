@@ -29,5 +29,3 @@ $('#login_button').on('click', function(){
     }
   })
 })
-
-
